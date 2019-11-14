@@ -61,6 +61,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def toggle_admin
+      current_user.update_attribute :admin, true
+      redirect_to users_url, notice: 'User is now an admin.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -71,4 +76,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
+
+    
 end
