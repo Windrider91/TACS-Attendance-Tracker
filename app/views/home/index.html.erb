@@ -6,7 +6,11 @@
   Logged in as <%= current_user.email %>.
   <%= link_to "Log Out", logout_path %>
   <% if current_user.admin? %>
-  	Admin privs go here
+  	<p>
+  	Admin priveliges
+  	<br>
+  	<%= link_to 'Edit Users', users_path %>
+  </p>
   <% end %>
 <% else %>
   <%= link_to "Sign Up", signup_path %> or 
