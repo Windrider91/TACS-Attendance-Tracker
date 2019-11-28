@@ -7,6 +7,19 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+  <% form_for @entry do |f| %>
+    <%= f.text_field :shirt %>
+    <%= f.select :shirt_size, [['Small','small'],['Medium','medium'],['Large','large'], ['XLarge', 'xlarge']] %>
+    <%= f.submit %>
+  <% end %>
+  
+   <% form_for @entry do |m| %>
+    <%= m.text_field :event %>
+    <%= m.select :event_name, [['Intro Meeting','intro_meeting'],['Meeting #2','meeting_2'],['Meeting #3','meeting_3']] %>
+    <%= m.submit %>
+  <% end %>
+  
 
   <body>
     <%= yield %>
