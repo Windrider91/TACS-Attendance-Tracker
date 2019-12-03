@@ -5,7 +5,7 @@
 <% if current_user %>
   Logged in as <%= current_user.email %>.
   <%= link_to "Log Out", logout_path %>
-  <% if current_user.admin? %>
+  <% if current_user.try(:admin?) %>
   	<p>
   	Admin priveliges
   	<br>
