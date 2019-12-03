@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   end
 
   def toggle_admin
-      @user.update_attribute :admin, true
+      current_user.update_attribute :admin, true
       redirect_to users_url, notice: 'User is now an admin.'
   end
 
