@@ -3,6 +3,20 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+  <br>
+  <strong>Dues paid? </strong>
+  <% if @user.dues %>
+    Dues are paid!
+  <%else%>
+    Dues are not paid.
+  <%end%>
+  <br>
+  <strong>Admin?</strong>
+  <%if @user.admin %>
+    User is admin!
+  <%else%>
+    Not an admin!
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

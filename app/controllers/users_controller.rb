@@ -62,8 +62,14 @@ class UsersController < ApplicationController
   end
 
   def toggle_admin
-      current_user.update_attribute :admin, true
+      @user = User.find_by_id(params[:id])
+      @user.update_attribute :admin, true
       redirect_to users_url, notice: 'User is now an admin.'
+  end
+  
+  def toggle_dues
+      current_user.update_attribute :dues, true
+      redirect_to users_url, notice: 'User dues have been marked as paid.' 
   end
 
   private

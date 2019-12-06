@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :users do
   	member do
   		post :toggle_admin
+  		#get 'toggle_admin', to: 'users#toggle_admin', as: 'toggle_admin'
   	end
   end
+  
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
