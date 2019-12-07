@@ -1,7 +1,7 @@
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
-<% if true %>
+<% if current_user.try(:admin?) %>
     <%= button_to 'Make User An Officer', toggle_admin_user_path(@user), data: { confirm: 'Are you sure?' }%>
     <br>
     <%= button_to 'Mark Dues as Paid', toggle_dues_user_path(@user) %>
