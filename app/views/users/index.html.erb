@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<% if true %>
+<% if current_user.try(:admin?) %>
   <table>
     <thead>
       <tr>
