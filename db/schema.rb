@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20191209002202) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "event_sign_ins", force: :cascade do |t|
     t.string "event_email"
     t.string "event_password"
