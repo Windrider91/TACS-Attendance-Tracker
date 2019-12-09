@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event email:</strong>
+  <%= @event_sign_in.event_email %>
+</p>
+
+<p>
+  <strong>Event password:</strong>
+  <%= @event_sign_in.event_password %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event_sign_in.event_date %>
+</p>
+
+<%= link_to 'Edit', edit_event_sign_in_path(@event_sign_in) %> |
+<%= link_to 'Back', event_sign_ins_path %>

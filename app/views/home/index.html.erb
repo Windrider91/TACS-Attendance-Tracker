@@ -5,17 +5,23 @@
 <% if current_user %>
   Logged in as <%= current_user.email %>.
   <%= link_to "Log Out", logout_path %>
+  
   <% if current_user.try(:admin?) %>
   	<p>
   	Admin privileges
   	<br>
   	<%= link_to 'Edit Users', users_path %>
+  	<br>
+  	<%= link_to 'View Event Attendance', event_sign_ins_path %>
   </p>
   <% end %>
 <% else %>
   <%= link_to "Sign Up", signup_path %> or 
   <%= link_to "Log In", login_path %>
 <% end %>
-  <p>
-  <iFrame src="https://calendar.google.com/calendar/b/3/embed?height=526&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tamu.edu_ad54lcc88gu8lclb6t8h61dr40%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style="border-width:0" width="600" height="526" frameborder="0" scrolling="no"></iframe>
-  </p>
+<br>
+<br>
+<%= link_to 'Event Sign In', new_event_sign_in_path %>
+<p>
+<iFrame src="https://calendar.google.com/calendar/b/3/embed?height=526&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tamu.edu_ad54lcc88gu8lclb6t8h61dr40%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style="border-width:0" width="600" height="526" frameborder="0" scrolling="no"></iframe>
+</p>

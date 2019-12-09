@@ -1,0 +1,29 @@
+<%= form_with(model: event_sign_in, local: true) do |form| %>
+  <% if event_sign_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event_sign_in.errors.count, "error") %> prohibited this event_sign_in from being saved:</h2>
+
+      <ul>
+      <% event_sign_in.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :event_email %>
+    <%= form.text_field :event_email, id: :event_sign_in_event_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_password %>
+    <%= form.text_field :event_password, id: :event_sign_in_event_password %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

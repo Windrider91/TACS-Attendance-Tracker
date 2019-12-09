@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Sign Ins</h1>
+
+<% if current_user.try(:admin?) %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @event_sign_ins.each do |event_sign_in| %>
+        <tr>
+          <td><%= event_sign_in.event_email %></td>
+          <td><%= event_sign_in.event_password %></td>
+          <td><%= event_sign_in.event_date %></td>
+          <td><%= link_to 'Destroy', event_sign_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Event Sign In', new_event_sign_in_path %>
+<% else %>
+  <p>You do not have permission to access this page </p>
+<% end %>
+<br> 
+<%= link_to 'Back to home page', root_path %>
